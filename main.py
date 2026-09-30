@@ -35,7 +35,7 @@ def add_student(student: Student, session: Session= Depends(get_session)):
     session.commit()
     session.refresh(student)
     return student
-
+ 
 #Read all or Get all student data
 @app.get("/students")
 def get_all_students(session: Session = Depends(get_session)):
@@ -78,3 +78,4 @@ def delete_student(
     session.delete(student)
     session.commit()
     return {"message": "Student deleted"}
+ 
